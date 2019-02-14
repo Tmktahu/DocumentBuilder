@@ -1,0 +1,22 @@
+{
+  "name": "documentbuilder",
+  "version": "1.0.0",
+  "description": "A highly configurable, interactive document preparation program.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tmktahu/DocumentBuilder.git"
+  },
+  "author": "Travis Kehrli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tmktahu/DocumentBuilder/issues"
+  },
+  "homepage": "https://github.com/Tmktahu/DocumentBuilder#readme",
+  "devDependencies": {
+    "electron": "^4.0.4"
+  }
+}
