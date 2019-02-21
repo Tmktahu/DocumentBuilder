@@ -21,8 +21,6 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null
   })
-
-  console.log("is it using my file?")
 }
 
 // This method will be called when Electron has finished
