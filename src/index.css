@@ -1,0 +1,40 @@
+body {
+	overflow: hidden;
+}
+
+.progressPane {
+	background-color: #5D5C61;
+}
+
+.mainPane {
+	background-color: #557A95;
+}
+
+.infoPane {
+	background-color: #7395AE;
+}
+
+#questionText {
+	font-family: "Open Sans";
+    font-size: 18px;
+    border-bottom: solid black;
+    padding-left: 10px;
+}
+
+#questionAnswer {
+	font-family: "Open Sans";
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+#detailsText {
+	font-family: "Open Sans";
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+#progressContent {
+	font-family: "Open Sans";
+    font-size: 18px;
+    padding-left: 10px;
+}
