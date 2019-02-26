@@ -1,3 +1,21 @@
 [
-	"this should be an array of tags to use for replacement"
+	"CAPD_DR/INC#",
+	"peace_officer_name",
+	"provider_name",
+	"delivery_phone#",
+	"delivery_fax#",
+	"delivery_email",
+	"affiant_qualifications",
+	"warrant_objective",
+	"probable_cause",
+	"sealed_warrant_reasons",
+	"request_to_delay_situation",
+	"request_to_delay_days",
+	"request_to_delay_reasons",
+	"extension_details",
+	"facebook_preservation#",
+	"facebook_accounts",
+	"facebook_start_date",
+	"facebook_end_date",
+	"facebook_information_types"
 ]
