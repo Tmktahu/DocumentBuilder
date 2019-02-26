@@ -1,4 +1,8 @@
 {
+	"drNumber" : "This is the CAPD_DR/INC Number.",
+	"peaceOfficerName" : "This is the name of the peace officer who is assembling this search warrant.",
+	"agencyName" : "This is the name of the agency to whom the peace officer belongs.",
+	"providerName" : "This is the name of the provider for who the search warrant is for.",
 	"About Me" : "“About Me”: information the user added to the About section of the user’s timeline such as relationships, work, “education”, “current city”, date of birth where you live, “favorite quotes”, “gender”, “hometown”, “religious views”, “political views”, “spoken languages”,  including any updates or changes the user made in the past and what is currently in the About section of their timeline;", 
 	"Name" : "“Name”: the name on the user’s Facebook account;",
 	"Name Changes" : "“Name Changes”: any changes the user made to the original name the user used when the user signed up for Facebook;",

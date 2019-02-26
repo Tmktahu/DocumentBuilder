@@ -53,6 +53,8 @@ function setup() {
 
 	searchWarrantScript();
 
+	$('#topGrid').height(window.innerHeight);
+
 	// Read the docx file as a binary
 	/*
 	var content = fs.readFileSync(path.resolve(__dirname, '../test.docx'), 'binary');
@@ -102,31 +104,14 @@ function setup() {
 function searchWarrantScript() {
 	var parent = document.getElementById("questionAnswer");
 
-	$('questionText').text('Please fill out the information below.');
+	$('#questionText').html('Please fill out the information below.');
 
-	var drNumberInput = document.createElement("input");
-	drNumberInput.type = "text";
-	drNumberInput.className = "inputField"; // set the CSS class
-	drNumberInput.id = "drNumber";
-	parent.appendChild(drNumberInput); // put it into the DOM
+	//<i class="step fi-address-book size-12"></i>
 
-	var peaceOfficerNameInput = document.createElement("input");
-	peaceOfficerNameInput.type = "text";
-	peaceOfficerNameInput.className = "inputField"; // set the CSS class
-	peaceOfficerNameInput.id = "peaceOfficerName";
-	parent.appendChild(peaceOfficerNameInput); // put it into the DOM
-
-	var agencyNameInput = document.createElement("input");
-	agencyNameInput.type = "text";
-	agencyNameInput.className = "inputField"; // set the CSS class
-	agencyNameInput.id = "agencyName";
-	parent.appendChild(agencyNameInput); // put it into the DOM
-
-	var providerNameInput = document.createElement("input");
-	providerNameInput.type = "text";
-	providerNameInput.className = "inputField"; // set the CSS class
-	providerNameInput.id = "providerName";
-	parent.appendChild(providerNameInput); // put it into the DOM
+	addSingleLineInput(parent, "drNumber", "CAPD_DR/INC# :");
+	addSingleLineInput(parent, "peaceOfficerName", "Peace Officer Name :");
+	addSingleLineInput(parent, "agencyName", "Your Agency Name :");
+	addSingleLineInput(parent, "providerName", "Target Provider Name :");
 
 	// Please enter this basic information?
 			// DR number
@@ -182,4 +167,34 @@ function searchWarrantScript() {
 		// For the order of the court to delay notification please fill out the following information
 			// Provider
 			// period in days?
+}
+
+function addSingleLineInput(parentDiv, questionID, questionLabel) {
+	var label = document.createElement("div");
+	var button = document.createElement("button");
+	button.id = questionID + "Button";
+	button.name = questionID;
+	button.className = "infoButton";
+	button.innerHTML = "<i class='step fi-info infoIcon' onclick='infoButtonHandler();'></i>";
+	button.onclick = infoButtonHandler;
+
+	label.appendChild(button);
+	label.className = "singleLineInputFieldLabel";
+	label.innerHTML += questionLabel;
+	parentDiv.appendChild(label);
+
+	var input = document.createElement("input");
+	input.type = "text";
+	input.className = "singleLineInputField"; // set the CSS class
+	input.id = questionID;
+	parentDiv.appendChild(input); // put it into the DOM
+}
+
+function infoButtonHandler() {
+	var questionID = $(window.event.target).parent()[0].name;
+	console.log(questionID);
+
+	var infoText = core.inserts[questionID];
+	$('#detailsText').empty();
+	$('#detailsText').html(infoText);
 }
