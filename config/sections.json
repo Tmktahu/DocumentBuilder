@@ -1,0 +1,26 @@
+[{
+	"sectionTitle": "Section Title",
+	"sectionText": "Please fill out the information below",
+	"sectionInputs": [
+		{
+			"inputType": "singleLineText",
+			"questionID": "drNumber",
+			"inputLabel": "CAPD_DR/INC# :"
+		},
+		{
+			"inputType": "singleLineText",
+			"questionID": "peaceOfficerName",
+			"inputLabel": "Peace Officer Name :"
+		},
+		{
+			"inputType": "singleLineText",
+			"questionID": "agencyName",
+			"inputLabel": "Agency Name :"
+		},
+		{
+			"inputType": "singleLineText",
+			"questionID": "providerName",
+			"inputLabel": "Target Provider Name :"
+		}
+	]
+}]

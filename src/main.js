@@ -3,7 +3,8 @@
 var core = {
 	tags : null,
 	questions : null,
-	inserts : null
+	inserts : null,
+	sections : null
 }
 
 var JSZip = require('jszip');
@@ -13,19 +14,23 @@ var fs = require('fs');
 var path = require('path');
 
 $.getJSON("../config/tags.json", function(data) {
-	handleConfigs(data, null, null);
+	handleConfigs(data, null, null, null);
 })
 
 $.getJSON("../config/questions.json", function(data) {
-	handleConfigs(null, data, null);
+	handleConfigs(null, data, null, null);
 })
 
 $.getJSON("../config/inserts.json", function(data) {
-	handleConfigs(null, null, data);
+	handleConfigs(null, null, data, null);
+})
+
+$.getJSON("../config/sections.json", function(data) {
+	handleConfigs(null, null, null, data);
 })
 
 
-function handleConfigs(tags, questions, inserts) {
+function handleConfigs(tags, questions, inserts, sections) {
 	if(tags != null) {
 		core.tags = tags;
 		console.log("Loaded tags from config file.");
@@ -41,7 +46,12 @@ function handleConfigs(tags, questions, inserts) {
 		console.log("Loaded inserts from config file.");
 	}
 
-	if(core.tags != null && core.questions != null && core.inserts != null) {
+	if(sections != null) {
+		core.sections = sections;
+		console.log("Loaded sections from config file.");
+	}
+
+	if(core.tags != null && core.questions != null && core.inserts != null && core.sections != null) {
 		console.log("finished loading and storing all configs");
 		setup();
 	}
@@ -108,10 +118,49 @@ function searchWarrantScript() {
 
 	//<i class="step fi-address-book size-12"></i>
 
+	loadSection(0);
+
 	addSingleLineInput(parent, "drNumber", "CAPD_DR/INC# :");
 	addSingleLineInput(parent, "peaceOfficerName", "Peace Officer Name :");
 	addSingleLineInput(parent, "agencyName", "Your Agency Name :");
 	addSingleLineInput(parent, "providerName", "Target Provider Name :");
+
+	addSubmitButton(parent);
+
+	// define a script as an array of questions to be asked
+	//	It would be an array of "sections" to be completed (use an object instead to easily go backwards if needed?)
+	// screw that
+	// an object of events. the problem is we need to maintain order
+	// I guess we could just use indexes. they shouldn't move anyway
+
+	// back to the array. keep track of indexes so we can backtrack if we want
+	// we need to define the question text
+	// we need to define the questions to be added to the answer area
+	/*
+		A section object would look like this:
+		{
+			sectionTitle: "A title for this section to be used in the progress sidebar",
+			sectionText: "The text that goes at the top",
+			sectionInputs: [
+				{
+					inputType: "The type of input that should be added",
+					questionID: "The id for this input/question",
+					inputLabel: "The text that should be used as the label for this input"
+				},
+				{
+					inputType: "The type of input that should be added",
+					questionID: "The id for this input/question",
+					inputLabel: "The text that should be used as the label for this input"
+				}
+			]
+		}
+	*/
+
+	// the theorically, we would assemble the progress pane based on the array of section objects
+	// if you click on a progress pane entry, it loads that section (all sorts of crap to deal with here)
+
+
+
 
 	// Please enter this basic information?
 			// DR number
@@ -197,4 +246,32 @@ function infoButtonHandler() {
 	var infoText = core.inserts[questionID];
 	$('#detailsText').empty();
 	$('#detailsText').html(infoText);
+}
+
+function addSubmitButton(parentDiv) {
+	var button = document.createElement("button");
+	button.id = "submitButton";
+	button.className = "submitButton";
+	button.innerHTML = "Continue";
+	button.addEventListener("click", submitButtonHandler);
+	parentDiv.appendChild(button);
+}
+
+function submitButtonHandler() {
+	console.log('you clicked the submit button')
+}
+
+function loadSection(sectionIndex) {
+	var targetSection = core.sections[sectionIndex];
+
+	// clear the screen
+	$('#questionText').empty();
+	$('#questionAnswer').empty();
+	$('#detailsText').empty();
+
+	// set the question text
+	$('#questionText').html(targetSection.sectionText);
+
+	// loop through the inputs and make each thing
+	for(questionObject in targetSection.sectionInputs)
 }
