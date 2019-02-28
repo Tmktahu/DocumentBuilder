@@ -1,0 +1,23 @@
+{
+	"drNumber" : "This is the CAPD_DR/INC Number.",
+	"peaceOfficerName" : "This is the name of the peace officer who is assembling this search warrant.",
+	"agencyName" : "This is the name of the agency to whom the peace officer belongs.",
+	"providerName" : "This is the name of the provider for who the search warrant is for.",
+	"delivery_phone_number" : "This is the phone number of the delivery location.",
+	"delivery_fax_number" : "This is the fax number of the delivery location.",
+	"delivery_email" : "This is the email address of the delivery location.",
+	"delivery_detective_name" : "This is the name of the detective who should receive the delivery.",
+	"delivery_detective_serial_number" : "This is the serial number of the detective who should receive the delivery.",
+	"affiant_qualifications" : "This is the qualifications of the affiant of this warrant.",
+	"warrant_objective" : "This is the object of this warrant.",
+	"probable_cause" : "This is the statement of probably cause for this warrant.",
+	"sealed_warrant_yesNo" : "This means whether or not you want the warrant to be sealed.",
+	"sealed_warrant_reasons" : "FILL THIS OUT AND WHATNOT",
+	"delay_notice_yesNo" : "This means whether or not you want to request for notification to be delayed.",
+	"request_to_delay_situation" : "MUST FILL",
+	"request_to_delay_days" : "This is the number of days you wish for notification to be delayed.",
+	"request_to_delay_reasons" : "These are the reasons for why you want notification to be delayed.",
+	"foreign_or_local_corporation" : "This is whether or not the target corporation/provider is in California or not.",
+	"multiple_or_single_location" : "Is this whether the warrant considering multiple locations or a single location."
+
+}

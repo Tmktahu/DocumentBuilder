@@ -22,5 +22,138 @@
 			"questionID": "providerName",
 			"inputLabel": "Target Provider Name :"
 		}
-	]
+	],
+	"sectionConditions": []
+},
+{
+	"sectionTitle": "Section Title 2",
+	"sectionText": "Please fill out the information about where the results of this warrant should be delivered:",
+	"sectionInputs": [
+		{
+			"inputType": "singleLineText",
+			"questionID": "delivery_phone_number",
+			"inputLabel": "Delivery Phone Number :"
+		},
+		{
+			"inputType": "singleLineText",
+			"questionID": "delivery_fax_number",
+			"inputLabel": "Delivery Fax Number :"
+		},
+		{
+			"inputType": "singleLineText",
+			"questionID": "delivery_email",
+			"inputLabel": "Delivery Email Address :"
+		},
+		{
+			"inputType": "singleLineText",
+			"questionID": "delivery_detective_name",
+			"inputLabel": "Detective's Name :"
+		},
+		{
+			"inputType": "singleLineText",
+			"questionID": "delivery_detective_serial_number",
+			"inputLabel": "Detective's Serial Number :"
+		}
+	],
+	"sectionConditions": []
+},
+{
+	"sectionTitle": "Affiant Qualifications",
+	"sectionText": "Please enter the affiant's qualifications:",
+	"sectionInputs": [
+		{
+			"inputType": "textBoxInput",
+			"questionID": "affiant_qualifications",
+			"inputLabel": "Affiant Qualifications :"
+		}
+	],
+	"sectionConditions": []
+},
+{
+	"sectionTitle": "Warrant Objective",
+	"sectionText": "Please enter the objective of the warrant:",
+	"sectionInputs": [
+		{
+			"inputType": "textBoxInput",
+			"questionID": "warrant_objective",
+			"inputLabel": "Warrant Objective :"
+		}
+	],
+	"sectionConditions": []
+},
+{
+	"sectionTitle": "Probable Cause",
+	"sectionText": "Please enter the statement of probable cause:",
+	"sectionInputs": [
+		{
+			"inputType": "textBoxInput",
+			"questionID": "probable_cause",
+			"inputLabel": "Statement of Probable Cause :"
+		}
+	],
+	"sectionConditions": []
+},
+{
+	"sectionTitle": "Sealed Warrant",
+	"sectionText": "Please answer the question below and fill out the required information if needed:",
+	"sectionInputs": [
+		{
+			"inputType": "yesNoQuestion",
+			"questionID": "sealed_warrant_yesNo",
+			"inputLabel": "Do you want to seal this warrant? :"
+		},
+		{
+			"inputType": "textBoxInput",
+			"questionID": "sealed_warrant_reasons",
+			"inputLabel": "Reasons for Sealed Warrant :"
+		}
+	],
+	"sectionConditions": []
+},
+{
+	"sectionTitle": "Delay Notice",
+	"sectionText": "Please answer the question below and fill out the required information if needed:",
+	"sectionInputs": [
+		{
+			"inputType": "yesNoQuestion",
+			"questionID": "delay_notice_yesNo",
+			"inputLabel": "Do you want to include a delay notice? :"
+		},
+		{
+			"inputType": "textBoxInput",
+			"questionID": "request_to_delay_situation",
+			"inputLabel": "Request to Delay Situtation :"
+		},
+		{
+			"inputType": "singleLineText",
+			"questionID": "request_to_delay_days",
+			"inputLabel": "Request to Delay Number of Days :"
+		},
+		{
+			"inputType": "textBoxInput",
+			"questionID": "request_to_delay_reasons",
+			"inputLabel": "Request to Delay Reasons :"
+		}
+	],
+	"sectionConditions": ["sealed_warrant_yesNo"],
+	"sectionConditionsFalse": "You cannot complete this section because you said NO in the Sealed Warrant section. A Delay Notice requires a Sealed Warrant."
+},
+{
+	"sectionTitle": "Delay Notice",
+	"sectionText": "Please select the correct options for the following questions:",
+	"sectionInputs": [
+		{
+			"inputType": "singleChoiceOption",
+			"questionID": "foreign_or_local_corporation",
+			"inputLabel": "Foreign or California Corporation :",
+			"radioOptions" : ["Foreign Corporation", "California Corporation"]
+		},
+		{
+			"inputType": "singleChoiceOption",
+			"questionID": "multiple_or_single_location",
+			"inputLabel": "Multiple or Single Location :",
+			"radioOptions" : ["Multiple Locations", "Single Location"]
+		}
+	],
+	"sectionConditions": []
 }]
