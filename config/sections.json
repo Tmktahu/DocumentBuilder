@@ -1,6 +1,6 @@
 [{
-	"sectionTitle": "Section Title",
-	"sectionText": "Please fill out the information below",
+	"sectionTitle": "Initial Information",
+	"sectionText": "Please fill out the information below:",
 	"sectionInputs": [
 		{
 			"inputType": "singleLineText",
@@ -26,7 +26,7 @@
 	"sectionConditions": []
 },
 {
-	"sectionTitle": "Section Title 2",
+	"sectionTitle": "Delivery Information",
 	"sectionText": "Please fill out the information about where the results of this warrant should be delivered:",
 	"sectionInputs": [
 		{
@@ -139,7 +139,7 @@
 	"sectionConditionsFalse": "You cannot complete this section because you said NO in the Sealed Warrant section. A Delay Notice requires a Sealed Warrant."
 },
 {
-	"sectionTitle": "Delay Notice",
+	"sectionTitle": "Location Specifics",
 	"sectionText": "Please select the correct options for the following questions:",
 	"sectionInputs": [
 		{

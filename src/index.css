@@ -124,7 +124,7 @@ body {
 }
 
 .progressButton {
-    background-color: green;
+    background-color: #557A95;
     width: 90%;
     height: 40px;
     margin-top: 5px;
@@ -132,9 +132,9 @@ body {
 }
 
 .progressButton:hover {
-    background-color: red;
+    background-color: #7395AE;
 }
 
 .progressButton.selected {
-    background-color: orange;
+    background-color: #B1A296;
 }

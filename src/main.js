@@ -411,8 +411,8 @@ function submitButtonHandler() {
 		$('#submitButton').html("Submit and Make Document");
 		$('#submitButton').width("200px");
 
-		var makeDocument = confirm("Are you sure you want to make the document?");
-		if(makeDocument) {
+		var makeDocumentBoolean = confirm("Are you sure you want to make the document?");
+		if(makeDocumentBoolean) {
 			makeDocument();
 		}
 
@@ -517,6 +517,11 @@ function makeDocument() {
 	doc.loadZip(zip);
 
 
+	// So we need to assemble the final object with tags and everything.
+	//	Most of this will be easy copy-paste from what they entered, but some of it requires inserts
+	//	This is where the inserts config file comes in. Users can put the config file inserts they want in there and this will use them if they exist
+	//	We could make the inserts arrays of inserts and user input could be placed between two inserts
+
 	//set the templateVariables
 	doc.setData({
 	    peace_officer_name: 'John Man Thing',
@@ -550,9 +555,8 @@ function makeDocument() {
 
 	// NOTES:
 	//	If it finds a {tag} that it does not have a definition for, it replaces it with "undefined".
-	//	\n and \r newline characters don't seem to work. We should try the other one
+	//	\n and \r newline characters don't seem to work.
 
-	// so here we can make sure all the variables are set up as needed, GUI elements are prepared, and we are good to enter the main loop
 }
 
 $(document).delegate('.textBoxFieldInput', 'keydown', function(e) {
