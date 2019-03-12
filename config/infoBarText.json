@@ -40,16 +40,23 @@
 		"buttons" : []
 	},
 	"warrant_objective" : {
-		"infoText" : "Click the buttons below for more information.",
+		"infoText" : "Click the buttons below for example text to include.",
 		"buttons" : [
-			{"buttonText" : "THINGY", "buttonData": "DATA"},
-			{"buttonText" : "THINGY2", "buttonData": "DATA2"},
-			{"buttonText" : "THINGY3", "buttonData": "DATA3"}
+			{"buttonText" : "Identify Suspects", "buttonData": "### …identify the suspect(s) who committed the crimes described herein and to obtain evidence useful in proving the suspect committed the crimes described herein;"},
+			{"buttonText" : "Identify Aiders/Abettors", "buttonData": "### …identify potentially unknown suspects who are participating in the crimes described herein as co-conspirators and/or aiders and abettors;"},
+			{"buttonText" : "Identify Exculpatory Evidence", "buttonData": "### …preserve and uncover exculpatory evidence;"},
+			{"buttonText" : "Establish Levels of Culpability", "buttonData": "### …establish levels of culpability of any suspects/co-conspirators (known or not known at this time);"},
+			{"buttonText" : "Obtain Evidence", "buttonData": "### …obtain evidence of dominion and control over any accounts/devices used as instrumentalities of the criminal conduct and dates, times, and locations of the felony violations described herein.  The volume of the amount and quantity of use of those accounts, the locations during the use(s) of those accounts, and the communications and information stored therein, in total (during the specific time frame detailed in the attached and incorporated description pages), will establish dominion and control of those accounts; whether fixed (at some time or times within the time frame specified) or continuous and on-going (throughout the time frame specified), will establish whether the accounts were created specifically as instrumentalities of criminal conduct or whether the accounts serve more than one purpose;"},
+			{"buttonText" : "Establish Patterns", "buttonData": "### …establish patterns, time frames (including those currently or not currently known), and/or locations for the criminal(s)/criminal activity;"},
+			{"buttonText" : "Reveal Correspondence", "buttonData": "### …reveal correspondence to known and unknown co-conspirators;"},
+			{"buttonText" : "Discover Fruits of the Crime", "buttonData": "### …discover the fruits of the crime."}
 		]
 	},
 	"probable_cause" : {
-		"infoText" : "In addition to establishing probable cause for the crimes you are investigating,\n• Explain how you know that Facebook has the kind of records you are requesting.\nBased upon my experience/knowledge/speaking with other officers/past search warrants, I know that Facebook maintains information about their customers including the records requested in this search warrant. I have read Facebook.com’s Terms of Service, Privacy Policy, and Law Enforcement Manual…\n• Explain how you identified the target account and why you believe that the target account is relevant to your investigation.  If you believe that you know who the target account belongs to, state why you believe that.\n• Explain why you chose the time period for which you are requesting records.",
-		"buttons" : []
+		"infoText" : "This is where you fill out the probable cause for this warrant. Please see more information with the button below.",
+		"buttons" : [
+			{"buttonText" : "More Information", "buttonData" : "### In addition to establishing probable cause for the crimes you are investigating,\n* #### Explain how you know that Facebook has the kind of records you are requesting.\n    - #### *Based upon my experience/knowledge/speaking with other officers/past search warrants, I know that Facebook maintains information about their customers including the records requested in this search warrant. I have read Facebook.com’s Terms of Service, Privacy Policy, and Law Enforcement Manual…*\n* #### Explain how you identified the target account and why you believe that the target account is relevant to your investigation.  If you believe that you know who the target account belongs to, state why you believe that.\n* #### Explain why you chose the time period for which you are requesting records."}
+		]
 	},
 	"sealed_warrant_yesNo" : {
 		"infoText" : "This means whether or not you want the warrant to be sealed.",
@@ -82,6 +89,6 @@
 	"multiple_or_single_location" : {
 		"infoText" : "Is this whether the warrant considering multiple locations or a single location.",
 		"buttons" : []
-	},
+	}
 
 }

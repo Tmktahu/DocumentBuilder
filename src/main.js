@@ -664,3 +664,8 @@ $(document).delegate('.textBoxFieldInput', 'keydown', function(e) {
     this.selectionEnd = start + 1;
   }
 });
+
+$(window).on('resize', function() {
+	console.log('ok')
+	$('#topGrid').height(window.innerHeight);
+})

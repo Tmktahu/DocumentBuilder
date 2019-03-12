@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Tmktahu/DocumentBuilder#readme",
   "devDependencies": {
     "electron": "^4.0.4"
+  },
+  "dependencies": {
+    "markdown-it": "^8.4.2"
   }
 }

@@ -49,11 +49,10 @@ app.on('activate', () => {
 })
 
 ipcMain.on('infoWindow', (event, arg) => {
-	let newInfoWin = new BrowserWindow({ width: 400, height: 300 });
+	let newInfoWin = new BrowserWindow({ width: 600, height: 300 });
 	newInfoWin.loadFile(__dirname + '/infoWindow.html');
-	newInfoWin.webContents.openDevTools();
+	//newInfoWin.webContents.openDevTools();
 	infoWindows.push(newInfoWin);
 
 	newInfoWin.infoWindowData = arg;
-	console.log(arg);
 })
