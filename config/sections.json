@@ -64,7 +64,8 @@
 		{
 			"inputType": "textBoxInput",
 			"questionID": "affiant_qualifications",
-			"inputLabel": "Affiant Qualifications :"
+			"inputLabel": "Affiant Qualifications :",
+			"defaultText": "I, your affiant, Detective ..."
 		}
 	],
 	"sectionConditions": []
@@ -76,7 +77,8 @@
 		{
 			"inputType": "textBoxInput",
 			"questionID": "warrant_objective",
-			"inputLabel": "Warrant Objective :"
+			"inputLabel": "Warrant Objective :",
+			"defaultText": "The objective of this warrant is to..."
 		}
 	],
 	"sectionConditions": []
@@ -105,7 +107,8 @@
 		{
 			"inputType": "textBoxInput",
 			"questionID": "sealed_warrant_reasons",
-			"inputLabel": "Reasons for Sealed Warrant :"
+			"inputLabel": "Reasons for Sealed Warrant :",
+			"defaultText": "Public disclosure of this case could cause irreparable harm to the investigation and hinder identifying other involved parties as well as cause undue public alarm because [FILL IN SPECIFIC FACTS]. Therefore, your affiant is requesting the entire warrant and affidavit be sealed from public disclosure."
 		}
 	],
 	"sectionConditions": []
@@ -132,7 +135,8 @@
 		{
 			"inputType": "textBoxInput",
 			"questionID": "request_to_delay_reasons",
-			"inputLabel": "Request to Delay Reasons :"
+			"inputLabel": "Request to Delay Reasons :",
+			"defaultText": "• danger to the life or physical safety of an individual because [FILL IN SPECIFIC FACTS];\n• flight from prosecution because [FILL IN SPECIFIC FACTS];\n• destruction of or tampering with evidence because [FILL IN SPECIFIC FACTS];\n• intimidation of potential witnesses because [FILL IN SPECIFIC FACTS];\n• serious jeopardy to an investigation because [FILL IN SPECIFIC FACTS];\n• undue delay of a trial because [FILL IN SPECIFIC FACTS]."
 		}
 	],
 	"sectionConditions": ["sealed_warrant_yesNo"],

@@ -138,3 +138,10 @@ body {
 .progressButton.selected {
     background-color: #B1A296;
 }
+
+.moreInfoButton {
+    height: 40px;
+    width: 100%;
+    background-color: #B1A296;
+    margin-bottom: 15px;
+}

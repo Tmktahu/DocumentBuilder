@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document Builder</title>
+
+    <link rel="stylesheet" href="../lib/foundation/css/foundation.css">
+    <link rel="stylesheet" href="../lib/foundation/css/app.css">
+    <link rel="stylesheet" href="../lib/foundation-icons/foundation-icons.css" />
+    <link rel="stylesheet" href="./infoWindow.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <div id="topGrid" class="grid-x">
+      <div class="cell medium-2 progressPane">
+        <div id="progressContent"></div>
+      </div>
+      <div class="cell medium-6 mainPane">
+
+        <div class="grid-y" style="height:100%">
+          <div id="questionText" class="cell medium-2">
+            Question Text
+          </div>
+          <div id="questionAnswer" class="cell medium-auto">
+          </div>
+        </div>
+      </div>
+      <div class="cell medium-4 infoPane">
+        <div id="detailsText">Details/Info Pane</div>
+      </div>
+    </div>
+
+
+
+    <script src="../lib/foundation/js/vendor/jquery.js"></script>
+    <script src="../lib/foundation/js/vendor/what-input.js"></script>
+    <script src="../lib/foundation/js/vendor/foundation.js"></script>
+    <script src="../lib/foundation/js/app.js"></script>
+
+    <script src="infoWindow.js"></script>
+  </body>
+</html>

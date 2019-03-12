@@ -1,23 +1,87 @@
 {
-	"drNumber" : "This is the CAPD_DR/INC Number.",
-	"peaceOfficerName" : "This is the name of the peace officer who is assembling this search warrant.",
-	"agencyName" : "This is the name of the agency to whom the peace officer belongs.",
-	"providerName" : "This is the name of the provider for who the search warrant is for.",
-	"delivery_phone_number" : "This is the phone number of the delivery location.",
-	"delivery_fax_number" : "This is the fax number of the delivery location.",
-	"delivery_email" : "This is the email address of the delivery location.",
-	"delivery_detective_name" : "This is the name of the detective who should receive the delivery.",
-	"delivery_detective_serial_number" : "This is the serial number of the detective who should receive the delivery.",
-	"affiant_qualifications" : "This is the qualifications of the affiant of this warrant.",
-	"warrant_objective" : "This is the object of this warrant.",
-	"probable_cause" : "This is the statement of probably cause for this warrant.",
-	"sealed_warrant_yesNo" : "This means whether or not you want the warrant to be sealed.",
-	"sealed_warrant_reasons" : "FILL THIS OUT AND WHATNOT",
-	"delay_notice_yesNo" : "This means whether or not you want to request for notification to be delayed.",
-	"request_to_delay_situation" : "MUST FILL",
-	"request_to_delay_days" : "This is the number of days you wish for notification to be delayed.",
-	"request_to_delay_reasons" : "These are the reasons for why you want notification to be delayed.",
-	"foreign_or_local_corporation" : "This is whether or not the target corporation/provider is in California or not.",
-	"multiple_or_single_location" : "Is this whether the warrant considering multiple locations or a single location."
+	"drNumber" : {
+		"infoText" : "This is the CAPD_DR/INC Number.",
+		"buttons" : []
+	},
+	"peaceOfficerName" : {
+		"infoText" : "This is the name of the peace officer who is assembling this search warrant.",
+		"buttons" : []
+	},
+	"agencyName" : {
+		"infoText" : "This is the name of the agency to whom the peace officer belongs.",
+		"buttons" : []
+	},
+	"providerName" : {
+		"infoText" : "This is the name of the provider for who the search warrant is for.",
+		"buttons" : []
+	},
+	"delivery_phone_number" : {
+		"infoText" : "This is the phone number of the delivery location.",
+		"buttons" : []
+	},
+	"delivery_fax_number" : {
+		"infoText" : "This is the fax number of the delivery location.",
+		"buttons" : []
+	},
+	"delivery_email" : {
+		"infoText" : "This is the email address of the delivery location.",
+		"buttons" : []
+	},
+	"delivery_detective_name" : {
+		"infoText" : "This is the name of the detective who should receive the delivery.",
+		"buttons" : []
+	},
+	"delivery_detective_serial_number" : {
+		"infoText" : "This is the serial number of the detective who should receive the delivery.",
+		"buttons" : []
+	},
+	"affiant_qualifications" : {
+		"infoText" : "In addition to your background, training and experience related to the crime(s) under investigation, list your background, training and experience related to communications and social media evidence and how criminals use electronic communications and social media.",
+		"buttons" : []
+	},
+	"warrant_objective" : {
+		"infoText" : "Click the buttons below for more information.",
+		"buttons" : [
+			{"buttonText" : "THINGY", "buttonData": "DATA"},
+			{"buttonText" : "THINGY2", "buttonData": "DATA2"},
+			{"buttonText" : "THINGY3", "buttonData": "DATA3"}
+		]
+	},
+	"probable_cause" : {
+		"infoText" : "In addition to establishing probable cause for the crimes you are investigating,\n• Explain how you know that Facebook has the kind of records you are requesting.\nBased upon my experience/knowledge/speaking with other officers/past search warrants, I know that Facebook maintains information about their customers including the records requested in this search warrant. I have read Facebook.com’s Terms of Service, Privacy Policy, and Law Enforcement Manual…\n• Explain how you identified the target account and why you believe that the target account is relevant to your investigation.  If you believe that you know who the target account belongs to, state why you believe that.\n• Explain why you chose the time period for which you are requesting records.",
+		"buttons" : []
+	},
+	"sealed_warrant_yesNo" : {
+		"infoText" : "This means whether or not you want the warrant to be sealed.",
+		"buttons" : []
+	},
+	"sealed_warrant_reasons" : {
+		"infoText" : "FILL THIS OUT AND WHATNOT",
+		"buttons" : []
+	},
+	"delay_notice_yesNo" : {
+		"infoText" : "This means whether or not you want to request for notification to be delayed.",
+		"buttons" : []
+	},
+	"request_to_delay_situation" : {
+		"infoText" : "MUST FILL",
+		"buttons" : []
+	},
+	"request_to_delay_days" : {
+		"infoText" : "This is the number of days you wish for notification to be delayed.",
+		"buttons" : []
+	},
+	"request_to_delay_reasons" : {
+		"infoText" : "These are the reasons for why you want notification to be delayed.",
+		"buttons" : []
+	},
+	"foreign_or_local_corporation" : {
+		"infoText" : "This is whether or not the target corporation/provider is in California or not.",
+		"buttons" : []
+	},
+	"multiple_or_single_location" : {
+		"infoText" : "Is this whether the warrant considering multiple locations or a single location.",
+		"buttons" : []
+	},
 
 }

@@ -1,8 +1,10 @@
 const { app, BrowserWindow } = require('electron')
+const { ipcMain } = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 var win;
+var infoWindows = [];
 
 function createWindow () {
   // Create the browser window.
@@ -19,7 +21,8 @@ function createWindow () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    win = null
+    win = null;
+    infoWindows = null;
   })
 }
 
@@ -45,3 +48,12 @@ app.on('activate', () => {
   }
 })
 
+ipcMain.on('infoWindow', (event, arg) => {
+	let newInfoWin = new BrowserWindow({ width: 400, height: 300 });
+	newInfoWin.loadFile(__dirname + '/infoWindow.html');
+	newInfoWin.webContents.openDevTools();
+	infoWindows.push(newInfoWin);
+
+	newInfoWin.infoWindowData = arg;
+	console.log(arg);
+})
