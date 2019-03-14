@@ -543,8 +543,11 @@ function makeDocument() {
 		switch(key) {
 			case 'delay_notice_yesNo':
 				if(core.answers.sealed_warrant_yesNo && core.answers.delay_notice_yesNo) {
-					core.finalInserts['request_to_delay_insert'] = "Pursuant to Penal Code section 1546.2(b)(1), this court has the authority to delay notification to the target of this investigation for up to ninety (90) days upon a showing that contemporaneous notice will have an adverse result. Penal Code section 1546 (a) defines adverse result as: danger to the life or physical safety of an individual; flight from prosecution; destruction of or tampering with evidence; intimidation of potential witnesses; and serious jeopardy to an investigation or undue delay of a trial.\n\nAdditionally, your affiant is aware that service providers, including Facebook, will customarily notify the account holder of a government request for account information, absent a court order prohibiting such notification.  Your affiant hereby requests an order requiring the service provider(s) to make all attempts to preserve all information related to the above account(s) (18 USC 2703(f)), and delay notification to subscriber(s) or any party providing information from notifying any other party, with the exception of other verified law enforcement agencies, that this information has been sought.\n\nI request an order to delay notification to the target account holder for " + core.answers.request_to_delay_days + " days.  I believe that there is good cause to believe that notification to the target of the search would create an adverse result for the following reasons:\n\n" + core.answers.request_to_delay_reasons;
+					core.finalInserts['request_to_delay_insert'] = "Pursuant to Penal Code section 1546.2(b)(1), this court has the authority to delay notification to the target of this investigation for up to ninety (90) days upon a showing that contemporaneous notice will have an adverse result. Penal Code section 1546 (a) defines adverse result as: danger to the life or physical safety of an individual; flight from prosecution; destruction of or tampering with evidence; intimidation of potential witnesses; and serious jeopardy to an investigation or undue delay of a trial.\n\nAdditionally, your affiant is aware that service providers, including Facebook, will customarily notify the account holder of a government request for account information, absent a court order prohibiting such notification.  Your affiant hereby requests an order requiring the service provider(s) to make all attempts to preserve all information related to the above account(s) (18 USC 2703(f)), and delay notification to subscriber(s) or any party providing information from notifying any other party, with the exception of other verified law enforcement agencies, that this information has been sought.\n\n";
+					core.finalInserts["delay_notice_yesNo"] = true;
 
+				} else {
+					core.finalInserts["delay_notice_yesNo"] = false;
 				}
 				break;
 
@@ -568,16 +571,6 @@ function makeDocument() {
 				}
 				break;
 
-			case 'sealed_warrant_reasons':
-				console.log('hm 2')
-				if(core.answers.sealed_warrant_yesNo) {
-					core.finalInserts[key] = "REQUEST FOR SEALED WARRANT\n\n" + core.answers[key];
-
-				} else {
-					core.finalInserts[key] = "";
-				}
-				break;
-
 			case 'delivery_phone_number':
 				core.finalInserts[key] = "Phone " + core.answers[key];
 				break;
@@ -595,10 +588,11 @@ function makeDocument() {
 
 
 	// Read the docx file as a binary
-	/*
-	var content = fs.readFileSync(path.resolve(__dirname, '../test.docx'), 'binary');
+	
+	var content = fs.readFileSync(path.resolve(__dirname, '../search_warrant_template.docx'), 'binary');
 	var zip = new JSZip(content);
 	var doc = new Docxtemplater();
+	doc.setOptions({linebreaks: true})
 	doc.loadZip(zip);
 
 
@@ -610,12 +604,9 @@ function makeDocument() {
 
 
 	//set the templateVariables
-	doc.setData({
-	    peace_officer_name: 'John Man Thing',
-	    provider_name: 'The Best Provider EVER',
-	    "delivery_phone#": '03957102385y7203857023750 yes',
-	    "affiant_qualifications": 'Here we are testing the\rnewline\rcharacter'
-	});
+	doc.setData(
+	    core.finalInserts
+	);
 
 	try {
 	    // render the document (replace all occurences of {first_name} by John, {last_name} by Doe, ...)
@@ -637,7 +628,7 @@ function makeDocument() {
 
 	// buf is a nodejs buffer, you can either write it to a file or do anything else with it.
 	fs.writeFileSync(path.resolve(__dirname, '../output.docx'), buf);
-	*/
+	
 
 
 	// NOTES:

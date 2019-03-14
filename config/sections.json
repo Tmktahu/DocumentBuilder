@@ -90,7 +90,8 @@
 		{
 			"inputType": "textBoxInput",
 			"questionID": "probable_cause",
-			"inputLabel": "Statement of Probable Cause :"
+			"inputLabel": "Statement of Probable Cause :",
+			"defaultText": "On DATE, your affiant responded to a TYPE OF CRIME investigation at ADDRESS, City of Angels, Angels County, incident #########.  Also investigating were..."
 		}
 	],
 	"sectionConditions": []
@@ -136,7 +137,7 @@
 			"inputType": "textBoxInput",
 			"questionID": "request_to_delay_reasons",
 			"inputLabel": "Request to Delay Reasons :",
-			"defaultText": "• danger to the life or physical safety of an individual because [FILL IN SPECIFIC FACTS];\n• flight from prosecution because [FILL IN SPECIFIC FACTS];\n• destruction of or tampering with evidence because [FILL IN SPECIFIC FACTS];\n• intimidation of potential witnesses because [FILL IN SPECIFIC FACTS];\n• serious jeopardy to an investigation because [FILL IN SPECIFIC FACTS];\n• undue delay of a trial because [FILL IN SPECIFIC FACTS]."
+			"defaultText": "I request an order to delay notification to the target account holder for ___ days.  I believe that there is good cause to believe that notification to the target of the search would create an adverse result for the following reasons:\n\n• danger to the life or physical safety of an individual because [FILL IN SPECIFIC FACTS];\n• flight from prosecution because [FILL IN SPECIFIC FACTS];\n• destruction of or tampering with evidence because [FILL IN SPECIFIC FACTS];\n• intimidation of potential witnesses because [FILL IN SPECIFIC FACTS];\n• serious jeopardy to an investigation because [FILL IN SPECIFIC FACTS];\n• undue delay of a trial because [FILL IN SPECIFIC FACTS]."
 		}
 	],
 	"sectionConditions": ["sealed_warrant_yesNo"],

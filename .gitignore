@@ -2,3 +2,7 @@ node_modules/
 npm-debug.log
 package-lock.json
 output.docx
+.~lock.output.docx#
+.~lock.search_warrant_template.docx#
+search_warrant_template.docx
+test.docx
