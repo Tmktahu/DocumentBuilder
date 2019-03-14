@@ -298,6 +298,12 @@ function addyesNoQuestion(questionID, questionLabel) {
 	noButton.innerHTML = "No";
 	noButton.onclick = yesNoButtonHandler;
 
+	if(core.answers[questionID]) {
+		yesButton.className += " questionButtonSelected";
+	} else {
+		noButton.className += " questionButtonSelected";
+	}
+
 	answerDiv.appendChild(noButton); // put it into the DOM
 	answerDiv.appendChild(yesButton); // put it into the DOM
 }
@@ -343,6 +349,9 @@ function addSingleChoiceOption(questionID, questionLabel, options) {
 function yesNoButtonHandler() {
 	var yesOrNo = $(window.event.target)[0].outerText;
 	var questionID = $(window.event.target)[0].name;
+
+	$('.questionNoButton').toggleClass('questionButtonSelected');
+	$('.questionYesButton').toggleClass('questionButtonSelected');
 
 	if(yesOrNo == "Yes") {
 		// A yes button has been pressed. Find the question it is for and label it as true?
