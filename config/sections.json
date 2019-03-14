@@ -97,7 +97,7 @@
 	"sectionConditions": []
 },
 {
-	"sectionTitle": "Sealed Warrant",
+	"sectionTitle": "Request for Sealed Warrant",
 	"sectionText": "Please answer the question below and fill out the required information if needed:",
 	"sectionInputs": [
 		{
@@ -115,7 +115,7 @@
 	"sectionConditions": []
 },
 {
-	"sectionTitle": "Delay Notice",
+	"sectionTitle": "Request to Delay Notice",
 	"sectionText": "Please answer the question below and fill out the required information if needed:",
 	"sectionInputs": [
 		{
@@ -144,7 +144,7 @@
 	"sectionConditionsFalse": "You cannot complete this section because you said NO in the Sealed Warrant section. A Delay Notice requires a Sealed Warrant."
 },
 {
-	"sectionTitle": "Location Specifics",
+	"sectionTitle": "Request For Extension",
 	"sectionText": "Please select the correct options for the following questions:",
 	"sectionInputs": [
 		{
@@ -158,6 +158,46 @@
 			"questionID": "multiple_or_single_location",
 			"inputLabel": "Multiple or Single Location :",
 			"radioOptions" : ["Multiple Locations", "Single Location"]
+		}
+	],
+	"sectionConditions": []
+},
+{
+	"sectionTitle": "Facebook Location Description",
+	"sectionText": "Please fill out the following information:",
+	"sectionInputs": [
+		{
+			"inputType": "singleLineText",
+			"questionID": "location_number",
+			"inputLabel": "Location # :"
+		},
+		{
+			"inputType": "textBoxInput",
+			"questionID": "target_facebook_accounts",
+			"inputLabel": "Target Accounts :",
+			"defaultText": "    1. https://www.facebook.com/USERNAME (viewed on DATE/TIME UTC)\n\nNOTE THAT IF YOU DESCIBE THE TARGET ACCOUNT BY USER NAME YOU MUST SPECIFY THE OPERATIVE DATE FOR THE USER NAME\n-OR-\n    1. https://www.facebook.com/profile.php?id=100006596116008"
+		},
+		{
+			"inputType": "singleLineText",
+			"questionID": "facebook_time_period_start",
+			"inputLabel": "Time Period Beginning :"
+		},
+		{
+			"inputType": "singleLineText",
+			"questionID": "facebook_time_period_end",
+			"inputLabel": "Time Period End :"
+		},
+		{
+			"inputType": "textBoxInput",
+			"questionID": "facebook_data_types",
+			"inputLabel": "For the following types of data :",
+			"defaultText": "^ Press the info button to see the list of data types you can place here."
+		},
+		{
+			"inputType": "textBoxInput",
+			"questionID": "facebook_additional_data_types",
+			"inputLabel": "For the following types of data :",
+			"defaultText": "^ Press the info button to see the list of data types you can place here."
 		}
 	],
 	"sectionConditions": []

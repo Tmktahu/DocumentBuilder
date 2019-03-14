@@ -87,8 +87,102 @@
 		"buttons" : []
 	},
 	"multiple_or_single_location" : {
-		"infoText" : "Is this whether the warrant considering multiple locations or a single location.",
+		"infoText" : "This is whether the warrant considering multiple locations or a single location.",
 		"buttons" : []
+	},
+	"location_number" : {
+		"infoText" : "This is the location number of this location. Be aware, previous location numbers carry over regardless of separate warrants.",
+		"buttons" : []
+	},
+	"target_facebook_accounts" : {
+		"infoText" : "These are the accounts you need information about. See the default text for examples.",
+		"buttons" : []
+	},
+	"facebook_time_period_start" : {
+		"infoText" : "This is the beginning of the time period for which you need the information.",
+		"buttons" : []
+	},
+	"facebook_time_period_end" : {
+		"infoText" : "This is the end of the time period for which you need the information.",
+		"buttons" : []
+	},
+	"facebook_data_types" : {
+		"infoText" : "These are the data types you need. Click the buttons below for more information about each type.",
+		"buttons" : [
+			{"buttonText" : "All Types", "buttonData" : "Copy and paste the data types you need:\n* “About Me”: information the user added to the About section of the user’s timeline such as relationships, work, “education”, “current city”, date of birth where you live, “favorite quotes”, “gender”, “hometown”, “religious views”, “political views”, “spoken languages”,  including any updates or changes the user made in the past and what is currently in the About section of their timeline;\n* “Account Status History”: the dates when the user’s account was reactivated, deactivated, disabled or deleted;\n* “Active Sessions”: All stored active sessions, including date, time, device, IP address, machine cookie and browser information;\n* “Address”: the user’s current address and any past addresses the user had on the user’s account;\n* “Ads Clicked”: dates, times and titles of ads clicked;\n* “Ads Topics”: a list of topics that the user may be targeted against based on the user’s stated likes, interests and other data the user put in the user’s timeline;\n* “Alternate Name”: any alternate names the user has on the user’s account;\n* “Apps”: all of the apps the user has added;\n* “Check-ins”: the places the user has checked into;\n* “Connections”: The people who have liked the user’s Page or Place, RSVPed to the user’s event, installed the user’s app or checked in to the user’s advertised place within 24 hours of viewing or clicking on an ad or Sponsored Story;\n* “Credit Cards”: Credit card numbers given to Facebook to make purchases on Facebook (for example in apps);\n* “Currency”: the user’s preferred currency on Facebook which may be used to display prices and charge credit cards if the user uses Facebook Payments;\n* “Emails”: email addresses the user added to the user’s account including those that the user may have removed;\n* “Events”: Events the user has joined or been invited to;\n* “Facial Recognition Data”: the unique number based on a comparison of the photos the user is tagged in. This data is used by Facebook to help other users’s tag the user in photos.\n* “Family”: friends you’re indicated are family members;\n* “Followers”: a list of people who follow the user;\n* “Following”: a list of people the user follows;\n* “Friend Requests”: pending sent and received friend requests;\n* “Friends”: a list of the user’s friends;\n* “Groups”: a list of groups the user belongs to on Facebook;\n* “Hidden from News Feed”: any friends, apps or pages the user has hidden from the user’s News Feed;\n* “IP Addresses”: all historically retained IP addresses where the user logged into the user’s Facebook account;\n* “Last Location”: The last location associated with an update;\n* “Linked Accounts”: a list of the accounts the user linked to the user’s Facebook account;\n* “Likes on Other Sites”: likes the user made on sites off of Facebook;\n* “Likes on Others’ Posts”: Posts, photos or other content the user has liked;\n* “Likes on Your Posts from others”: likes on the user’s own posts, phoots or other content;\n* “Locale”: the language the user selected to use Facebook in;\n* “Logins”: all historically retained IP addresses, dates and times associated with logins to the user’s Facebook account;\n* “Logouts”: all historically retained IP addresses, dates and times associated with logouts from the user’s Facebook account;\n* “Messages”: messages the user sent and received on Facebook, including (if retained) any deleted messages;\n* “Name”: the name on the user’s Facebook account;\n* “Name Changes”: any changes the user made to the original name the user used when the user signed up for Facebook;\n* “Networks”: Networks (such as affiliations with schools or workplaces) that the user belongs to on Facebook;\n* “Notes”: any notes the user has written and published to the user’s account;\n* “Pages You Admin”: a list of pages the user administrates;\n* “Phone Numbers”: mobile phone numbers the user added to the user’s account, including verified mobile numbers the user added for security purposes;\n* “Photos”: photos the user uploaded to the user’s account;\n* “Photos Metadata”: any metadata that is transmitted with the user’s uploaded photos;\n* “Physical Tokens”: badges the user has added to the user’s account;\n* “Pokes”: to the extent that it is retained, a list of who’s poked the user and who the user has poked;\n* “Posts by Others”: anything posted to the user’s timeline by someone else, such as wall posts or links shared on the user’s timeline by friends;\n* “Posts by You”: anything the user posted to the user’s own timeline, such as photos, vides and status updates;\n* “Privacy Settings”: the user’s privacy settings;\n* “Recent Activities”: actions the user has taken and interactions the user\n* “Registration Date”: the date the user joined Facebook;\n* “Removed Friends”: people the user has removed as friends;\n* “Screen Names”: the screen names the user has added to the user’s account, and the service they’re associated with including whether the the screen names are hidden or visible on the user’s account;\n* “Searches”: searches the user made on Facebook;\n* “Shares”: content (for example news articles) the user has shared with others on Facebook using the Share button or link;\n* “Status Updates”: any status updates the user has posted;\n* “Vanity URL”: your Facebook URL (for example the username or vanity for the user’s account);\n* “Videos”: videos the user uploaded to the user’s account or posted on the user’s timeline;\n* “Videos’ Metadata”: any metadata that is transmitted with the user’s uploaded videos;"},
+			{"buttonText" : "About Me", "buttonData" : "“About Me”: information the user added to the About section of the user’s timeline such as relationships, work, “education”, “current city”, date of birth where you live, “favorite quotes”, “gender”, “hometown”, “religious views”, “political views”, “spoken languages”,  including any updates or changes the user made in the past and what is currently in the About section of their timeline;"},
+			{"buttonText" : "Account Status History", "buttonData" : "“Account Status History”: the dates when the user’s account was reactivated, deactivated, disabled or deleted;"},
+			{"buttonText" : "Active Sessions", "buttonData" : "“Active Sessions”: All stored active sessions, including date, time, device, IP address, machine cookie and browser information;"},
+			{"buttonText" : "Address", "buttonData" : "“Address”: the user’s current address and any past addresses the user had on the user’s account;"},
+			
+			{"buttonText" : "Ads Clicked", "buttonData" : "“Ads Clicked”: dates, times and titles of ads clicked;"},
+			{"buttonText" : "Ads Topics", "buttonData" : "“Ads Topics”: a list of topics that the user may be targeted against based on the user’s stated likes, interests and other data the user put in the user’s timeline;"},
+			{"buttonText" : "Alternate Name", "buttonData" : "“Alternate Name”: any alternate names the user has on the user’s account;"},
+			{"buttonText" : "Apps", "buttonData" : "“Apps”: all of the apps the user has added;"},
+			{"buttonText" : "Check-ins", "buttonData" : "“Check-ins”: the places the user has checked into;"},
+			{"buttonText" : "Connections", "buttonData" : "“Connections”: The people who have liked the user’s Page or Place, RSVPed to the user’s event, installed the user’s app or checked in to the user’s advertised place within 24 hours of viewing or clicking on an ad or Sponsored Story;"},
+			{"buttonText" : "Credit Cards", "buttonData" : "“Credit Cards”: Credit card numbers given to Facebook to make purchases on Facebook (for example in apps);"},
+			{"buttonText" : "Currency", "buttonData" : "“Currency”: the user’s preferred currency on Facebook which may be used to display prices and charge credit cards if the user uses Facebook Payments;"},
+			{"buttonText" : "Emails", "buttonData" : "“Emails”: email addresses the user added to the user’s account including those that the user may have removed;"},
+			{"buttonText" : "Events", "buttonData" : "“Events”: Events the user has joined or been invited to;"},
+			{"buttonText" : "Facial Recognition Data", "buttonData" : "“Facial Recognition Data”: the unique number based on a comparison of the photos the user is tagged in. This data is used by Facebook to help other users’s tag the user in photos."},
+			{"buttonText" : "Family", "buttonData" : "“Family”: friends you’re indicated are family members;"},
+			{"buttonText" : "Followers", "buttonData" : "“Followers”: a list of people who follow the user;"},
+			{"buttonText" : "Following", "buttonData" : "“Following”: a list of people the user follows;"},
+			{"buttonText" : "Friend Requests", "buttonData" : "“Friend Requests”: pending sent and received friend requests;"},
+			{"buttonText" : "Friends", "buttonData" : "“Friends”: a list of the user’s friends;"},
+			{"buttonText" : "Groups", "buttonData" : "“Groups”: a list of groups the user belongs to on Facebook;"},
+			{"buttonText" : "Hidden from News Feed", "buttonData" : "“Hidden from News Feed”: any friends, apps or pages the user has hidden from the user’s News Feed;"},
+			{"buttonText" : "IP Addresses", "buttonData" : "“IP Addresses”: all historically retained IP addresses where the user logged into the user’s Facebook account;"},
+			{"buttonText" : "Last Location", "buttonData" : "“Last Location”: The last location associated with an update;"},
+			{"buttonText" : "Linked Accounts", "buttonData" : "“Linked Accounts”: a list of the accounts the user linked to the user’s Facebook account;"},
+			{"buttonText" : "Likes on Other Sites", "buttonData" : "“Likes on Other Sites”: likes the user made on sites off of Facebook;"},
+			{"buttonText" : "Likes on Others’ Posts", "buttonData" : "“Likes on Others’ Posts”: Posts, photos or other content the user has liked;"},
+			{"buttonText" : "Likes on Your Posts from others", "buttonData" : "“Likes on Your Posts from others”: likes on the user’s own posts, phoots or other content;"},
+			{"buttonText" : "Locale", "buttonData" : "“Locale”: the language the user selected to use Facebook in;"},
+			{"buttonText" : "Logins", "buttonData" : "“Logins”: all historically retained IP addresses, dates and times associated with logins to the user’s Facebook account;"},
+			{"buttonText" : "Logouts", "buttonData" : "“Logouts”: all historically retained IP addresses, dates and times associated with logouts from the user’s Facebook account;"},
+			{"buttonText" : "Messages", "buttonData" : "“Messages”: messages the user sent and received on Facebook, including (if retained) any deleted messages;"},
+			{"buttonText" : "Name", "buttonData" : "“Name”: the name on the user’s Facebook account;"},
+			{"buttonText" : "Name Changes", "buttonData" : "“Name Changes”: any changes the user made to the original name the user used when the user signed up for Facebook;"},
+			{"buttonText" : "Networks", "buttonData" : "“Networks”: Networks (such as affiliations with schools or workplaces) that the user belongs to on Facebook;"},
+			{"buttonText" : "Notes", "buttonData" : "“Notes”: any notes the user has written and published to the user’s account;"},
+			{"buttonText" : "Pages You Admin", "buttonData" : "“Pages You Admin”: a list of pages the user administrates;"},
+			{"buttonText" : "Phone Numbers", "buttonData" : "“Phone Numbers”: mobile phone numbers the user added to the user’s account, including verified mobile numbers the user added for security purposes;"},
+			{"buttonText" : "Photos", "buttonData" : "“Photos”: photos the user uploaded to the user’s account;"},
+			{"buttonText" : "Photos Metadata", "buttonData" : "“Photos Metadata”: any metadata that is transmitted with the user’s uploaded photos;"},
+			{"buttonText" : "Physical Tokens", "buttonData" : "“Physical Tokens”: badges the user has added to the user’s account;"},
+			{"buttonText" : "Pokes", "buttonData" : "“Pokes”: to the extent that it is retained, a list of who’s poked the user and who the user has poked;"},
+			{"buttonText" : "Posts by Others", "buttonData" : "“Posts by Others”: anything posted to the user’s timeline by someone else, such as wall posts or links shared on the user’s timeline by friends;"},
+			{"buttonText" : "Posts by You", "buttonData" : "“Posts by You”: anything the user posted to the user’s own timeline, such as photos, vides and status updates;"},
+			{"buttonText" : "Privacy Settings", "buttonData" : "“Privacy Settings”: the user’s privacy settings;"},
+			{"buttonText" : "Recent Activities", "buttonData" : "“Recent Activities”: actions the user has taken and interactions the user"},
+			{"buttonText" : "Registration Date", "buttonData" : "“Registration Date”: the date the user joined Facebook;"},
+			{"buttonText" : "Removed Friends", "buttonData" : "“Removed Friends”: people the user has removed as friends;"},
+			{"buttonText" : "Screen Names", "buttonData" : "“Screen Names”: the screen names the user has added to the user’s account, and the service they’re associated with including whether the the screen names are hidden or visible on the user’s account;"},
+			{"buttonText" : "Searches", "buttonData" : "“Searches”: searches the user made on Facebook;"},
+			{"buttonText" : "Shares", "buttonData" : "“Shares”: content (for example news articles) the user has shared with others on Facebook using the Share button or link;"},
+			{"buttonText" : "Status Updates", "buttonData" : "“Status Updates”: any status updates the user has posted;"},
+			{"buttonText" : "Vanity URL", "buttonData" : "“Vanity URL”: your Facebook URL (for example the username or vanity for the user’s account);"},
+			{"buttonText" : "Videos", "buttonData" : "“Videos”: videos the user uploaded to the user’s account or posted on the user’s timeline;"},
+
+			{"buttonText" : "Videos’ Metadata", "buttonData" : "“Videos’ Metadata”: any metadata that is transmitted with the user’s uploaded videos;"}
+		]
+	},
+	"facebook_additional_data_types" : {
+		"infoText" : "These are the data types you need. Click the buttons below for more information about each type.",
+		"buttons" : [
+			{"buttonText" : "Subscriber Information", "buttonData" : "Subscriber Information and billing information such as name, street address, telephone number, email address, or similar contact information provided by the subscriber to establish or maintain an account or communication channel, a subscriber or account number or identifier, the length of service, registration IP address, and types of services used by a user of or subscriber to a service provider associated with:"},
+			{"buttonText" : "Electronic Communications", "buttonData" : "All stored electronic communications for the above dates(s) and timespan including email, electronically transmitted messages, blog entries, full profiles, former user names or profiles, all digital images and videos, friend lists, and any other files associated with the following user accounts:"},
+			{"buttonText" : "Neoselect/Neoprint", "buttonData" : "Basic (Neoselect) and Expanded (Neoprint) Subscriber Information for above date and timespan. "},
+			{"buttonText" : "Records and Data", "buttonData" : "Records and data obtained from the above identified user’s computer, mobile phone or other device used to access Facebook/Instagram, during the above date and timespan, including IP addresses, Applications, Internet service provider, location (including GPS location information and other location information – see 'GPS Data'), the type (including identifiers) of browser used, and records of pages visited."},
+			{"buttonText" : "GPS Data", "buttonData" : "Facebook information as to the above described user’s geographical location, for the above date and timespan, as specified in Facebook’s privacy policy (www.facebook.com/about/privacy/your-info), “We may put together your current city with GPS and other location information we have about you to, for example, tell you and your friends about people or events nearby, or offer deals to you that you might be interested in. We may also put together data about you to serve you ads that might be more relevant to you. When we get your GPS location, we put it together with other location information we have about you (like your current city).”"},
+			{"buttonText" : "Interactions", "buttonData" : "Records of the user’s Facebook interactions for the above date and timespan including viewed timelines, sent and/or received messages, friend and Page searches, clicks, views or “otherwise interact with things”, use of Facebook mobile app, purchase Facebook Credits or other purchases through Facebook."},
+			{"buttonText" : "Metadata", "buttonData" : "Metadata gathered from data posted by the above identified user including metadata from images and other media uploaded or posted by the user between the above date and timespan."},
+			{"buttonText" : "User Records", "buttonData" : "Records of the user gathered from Facebook/Instagram Platforms or sites with Facebook/Instagram features and cookies.  Including the date and time of the site visit; the web address, or URL, the user was on and technical information about the IP address, browser and the operating system used by the user, and User ID, during the above date and timespan."},
+			{"buttonText" : "Connection Information", "buttonData" : "Connection information for other computers to which the user of the above-referenced accounts connected, by any means, during the connection period, including the destination IP address, connection time and date, disconnect time and date, method of connection to the destination computer, and all other information related to the connection(s) between the above date and timespan."}
+		]
 	}
+
 
 }
