@@ -6,3 +6,4 @@ output.docx
 .~lock.search_warrant_template.docx#
 search_warrant_template.docx
 test.docx
+dist/
