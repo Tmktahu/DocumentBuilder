@@ -27,7 +27,6 @@ $.getJSON("../config/infoBarText.json", function(data) {
 	handleConfigs(null, data);
 })
 
-
 function handleConfigs(sections, infoBarText) {
 	if(sections != null) {
 		core.sections = sections;
@@ -46,17 +45,18 @@ function handleConfigs(sections, infoBarText) {
 }
 
 function setup() {
-	console.log(core);
-
+	// Assemble the progress pane from the loaded sections
 	makeProgressPane();
+
+	// For now, we run the script for search warrants
 	searchWarrantScript();
 
+	// Set the height of the main window
 	$('#topGrid').height(window.innerHeight);
 }
 
 function makeProgressPane() {
-	// for each section, get the section TITLE and make a button entry in the progress pane
-
+	// For each section, make an append a button that loads its section
 	for(i in core.sections) {
 		var sectionTitle = core.sections[i].sectionTitle;
 
@@ -73,15 +73,14 @@ function makeProgressPane() {
 }
 
 function searchWarrantScript() {
-	
-
-	$('#questionText').html('Please fill out the information below.');
-
-	//<i class="step fi-address-book size-12"></i>
+	// Toggle the first button visually
 	$('#'+core.currentSectionIndex).toggleClass('selected');
+
+	// Load the current section
 	loadSection(core.currentSectionIndex, answerDiv);
 }
 
+// This function creates and appends a single input line with a label
 function addSingleLineInput(questionID, questionLabel) {
 	var label = document.createElement("div");
 	var button = document.createElement("button");
@@ -106,10 +105,10 @@ function addSingleLineInput(questionID, questionLabel) {
 		input.value = core.answers[questionID];
 	}
 
-
 	answerDiv.appendChild(input); // put it into the DOM
 }
 
+// This function creates and appends a text box input with default text if given
 function addTextBoxInput(questionID, questionLabel, defaultText) {
 	var label = document.createElement("div");
 	var button = document.createElement("button");
@@ -140,10 +139,8 @@ function addTextBoxInput(questionID, questionLabel, defaultText) {
 	answerDiv.appendChild(input); // put it into the DOM
 }
 
+// This function creates and appends a yes/no question that will toggle the section
 function addyesNoQuestion(questionID, questionLabel) {
-	// so we show a YES or NO option
-	// if they click YES, then populate underneath it?
-	// if they click NO, do nothing/flag as no.
 	var label = document.createElement("div");
 	var button = document.createElement("button");
 	button.id = questionID + "Button";
@@ -181,8 +178,8 @@ function addyesNoQuestion(questionID, questionLabel) {
 	answerDiv.appendChild(yesButton); // put it into the DOM
 }
 
+// This function creates a multiple choice question that only allows for one selected answer
 function addSingleChoiceOption(questionID, questionLabel, options) {
-	// the question will need the options defined in the configuration
 	var label = document.createElement("div");
 	var button = document.createElement("button");
 	button.id = questionID + "Button";
@@ -227,12 +224,11 @@ function yesNoButtonHandler() {
 	$('.questionNoButton').toggleClass('questionButtonSelected');
 	$('.questionYesButton').toggleClass('questionButtonSelected');
 
-	if(yesOrNo == "Yes") {
-		// A yes button has been pressed. Find the question it is for and label it as true?
-		core.answers[questionID] = true;
-		$('#submitButton').remove();
+	if(yesOrNo == "Yes") { // The button pressed was a "Yes" button
+		core.answers[questionID] = true; // Set the current question to true
+		$('#submitButton').remove(); // Remove the submit button for now
 
-		// load the rest of the questions
+		// For each question/input in this section that is not a yes/no question, create and append it
 		for(i in core.sections[core.currentSectionIndex].sectionInputs) {
 			var sectionInput = core.sections[core.currentSectionIndex].sectionInputs[i];
 			if(sectionInput.inputType == "singleLineText") {
@@ -244,6 +240,7 @@ function yesNoButtonHandler() {
 			}
 		}
 
+		// Re-add the submit button
 		addSubmitButton();
 
 	} else {
@@ -264,11 +261,11 @@ function infoButtonHandler() {
 
 	// send the infoBarText data to the main process for a new window
 
-	$('#detailsText').empty();
-	var infoPanel = document.getElementById("detailsText");
+	$('#helpPane').empty();
+	var infoPanel = document.getElementById("helpPane");
 
 	var infoText = "<p>" + core.infoBarText[questionID].infoText.replace(new RegExp("\n", 'g'), "<br>&emsp;&emsp;") + "</p>";
-	$('#detailsText').html(infoText);
+	$('#helpPane').html(infoText);
 
 	if(core.infoBarText[questionID].buttons.length > 0) {
 		var buttons = core.infoBarText[questionID].buttons;
@@ -376,7 +373,7 @@ function loadSection(sectionIndex) {
 	// clear the screen
 	$('#questionText').empty();
 	$('#questionAnswer').empty();
-	$('#detailsText').empty();
+	$('#helpPane').empty();
 
 	var goodToGo = true;
 	if(targetSection.sectionConditions.length > 0) {
@@ -412,6 +409,7 @@ function loadSection(sectionIndex) {
 		}
 
 		addSubmitButton();
+		loadHelpPane();
 	} else {
 		// cannot load this section due to a previous choice. tell them that.
 		var reason = targetSection.sectionConditionsFalse;
@@ -520,6 +518,53 @@ function makeDocument() {
 	//	If it finds a {tag} that it does not have a definition for, it replaces it with "undefined".
 	//	\n and \r newline characters don't seem to work.
 
+}
+
+function loadHelpPane() {
+	var targetSection = core.sections[core.currentSectionIndex];
+	var sectionHelp = targetSection.sectionHelp;
+	console.log(targetSection)
+
+
+	for(var i in sectionHelp) {
+		if(sectionHelp[i].helpType == "helpText") {
+			if(sectionHelp[i].helpTitle != "") {
+				// Create and append a title section
+				var title = document.createElement('div');
+				title.className = "helpTitle";
+				title.innerHTML = sectionHelp[i].helpTitle;
+				$('#helpPane').append(title);
+			}
+
+			// Create and append a text section
+			var text = document.createElement('div');
+			text.className = "helpText";
+			text.innerHTML = sectionHelp[i].helpContent;
+			$('#helpPane').append(text);
+
+		} else if(sectionHelp[i].helpType == "helpInsert") {
+			// Create and append a button along with the text it inserts
+			var insertButton = document.createElement("button");
+			insertButton.id = "insertButton";
+			insertButton.className = "insertButton";
+			insertButton.innerHTML = "Insert";
+			insertButton.customContent = sectionHelp[i].helpContent;
+			insertButton.targetQuestion = sectionHelp[i].targetQuestionID;
+			insertButton.addEventListener("click", insertButtonHandler);
+			$('#helpPane').append(insertButton);
+		}
+	}
+
+
+}
+
+function insertButtonHandler() {
+	var insertText = $(window.event.target)[0].customContent;
+	var questionID = $(window.event.target)[0].targetQuestion;
+	console.log(insertText)
+	console.log(questionID)
+
+	$('#' + questionID).val($('#' + questionID).val() + '\n' + insertText);
 }
 
 $(document).delegate('.textBoxFieldInput', 'keydown', function(e) {

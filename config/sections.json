@@ -25,7 +25,19 @@
 			"radioOptions" : ["Yes", "No"]
 		}
 	],
-	"sectionConditions": []
+	"sectionConditions": [],
+	"sectionHelp": [
+		{
+			"helpType": "helpText",
+			"helpTitle": "Yes/No Questions",
+			"helpContent": "The first question of this section is a 'Yes/No' question type. If you answer 'no', then the section will be hidden and ignored when making the document."
+		},
+		{
+			"helpType": "helpInsert",
+			"targetQuestionID": "tutorial_text_box",
+			"helpContent": "This is an example insert. Inserts will always be put in with a newline before them."
+		}
+	]
 },
 {
 	"sectionTitle": "Initial Information",
