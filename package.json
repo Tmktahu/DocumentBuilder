@@ -7,13 +7,14 @@
   "scripts": {
     "start": "electron src/index.js",
     "pack": "electron-builder --dir",
-    "distMac": "electron-builder --mac"
+    "distMac": "electron-builder --mac",
+    "distWin": "electron-builder --win portable",
+    "distLin": "electron-builder"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tmktahu/DocumentBuilder.git"
   },
-  "author": "Travis Kehrli",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Tmktahu/DocumentBuilder/issues"
