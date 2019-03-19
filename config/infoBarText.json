@@ -87,7 +87,7 @@
 		"buttons" : []
 	},
 	"multiple_or_single_location" : {
-		"infoText" : "This is whether the warrant considering multiple locations or a single location.",
+		"infoText" : "This is whether the warrant is considering multiple locations or a single location.",
 		"buttons" : []
 	},
 	"location_number" : {

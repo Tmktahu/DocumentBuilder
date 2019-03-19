@@ -130,9 +130,9 @@ body {
 .progressButton {
     background-color: #557A95;
     width: 90%;
-    height: 40px;
     margin-top: 5px;
     font-size: 16px;
+    padding: 5px 5px 5px 5px;;
 }
 
 .progressButton:hover {
