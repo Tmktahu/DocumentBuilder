@@ -228,6 +228,7 @@ function addSingleChoiceOption(questionID, questionLabel, options) {
 	answerDiv.appendChild(label);
 
 	var form = document.createElement("form");
+	form.id = questionID;
 	for(i in options) {
 		var wrapper = document.createElement("div");
 		wrapper.className = "radioOptionWrapper";
@@ -268,6 +269,8 @@ function yesNoButtonHandler() {
 				addSingleLineInput(sectionInput.questionID, sectionInput.inputLabel);
 			} else if(sectionInput.inputType == "textBoxInput") {
 				addTextBoxInput(sectionInput.questionID, sectionInput.inputLabel, sectionInput.defaultText);
+			} else if(sectionInput.inputType == "singleChoiceOption") {
+				addSingleChoiceOption(sectionInput.questionID, sectionInput.inputLabel, sectionInput.radioOptions);
 			}
 		}
 

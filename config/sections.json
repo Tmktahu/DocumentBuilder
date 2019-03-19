@@ -1,4 +1,33 @@
 [{
+	"sectionTitle": "Tutorial",
+	"sectionText": "This is a dummy section that will show you how to use this program.",
+	"sectionInputs": [
+		{
+			"inputType": "yesNoQuestion",
+			"questionID": "tutorial_yesNo",
+			"inputLabel": "Do you want to learn how to use this program? :"
+		},
+		{
+			"inputType": "singleLineText",
+			"questionID": "tutorial_single_line",
+			"inputLabel": "Single Line Input :"
+		},
+		{
+			"inputType": "textBoxInput",
+			"questionID": "tutorial_text_box",
+			"inputLabel": "Text Box Input :",
+			"defaultText": "^ You can click the little 'i' info buttons to get help text on the right side of the screen.\n\nSometimes there will be buttons you can press there that will give you more information in a popup."
+		},
+		{
+			"inputType": "singleChoiceOption",
+			"questionID": "tutorial_single_choice",
+			"inputLabel": "Did you look at the info text for all these questions? :",
+			"radioOptions" : ["Yes", "No"]
+		}
+	],
+	"sectionConditions": []
+},
+{
 	"sectionTitle": "Initial Information",
 	"sectionText": "Please fill out the information below:",
 	"sectionInputs": [
@@ -175,7 +204,7 @@
 			"inputType": "textBoxInput",
 			"questionID": "target_facebook_accounts",
 			"inputLabel": "Target Accounts :",
-			"defaultText": "    1. https://www.facebook.com/USERNAME (viewed on DATE/TIME UTC)\n\nNOTE THAT IF YOU DESCIBE THE TARGET ACCOUNT BY USER NAME YOU MUST SPECIFY THE OPERATIVE DATE FOR THE USER NAME\n-OR-\n    1. https://www.facebook.com/profile.php?id=100006596116008"
+			"defaultText": "    1. https://www.facebook.com/USERNAME (viewed on DATE/TIME UTC)\n\nNOTE THAT IF YOU DESCRIBE THE TARGET ACCOUNT BY USER NAME YOU MUST SPECIFY THE OPERATIVE DATE FOR THE USER NAME\n-OR-\n    1. https://www.facebook.com/profile.php?id=100006596116008"
 		},
 		{
 			"inputType": "singleLineText",

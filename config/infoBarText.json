@@ -1,4 +1,22 @@
 {
+	"tutorial_yesNo" : {
+		"infoText" : "This is a yes/no toggle for the section. If you answer 'no', then the section will be hidden and ignored when making the document.",
+		"buttons" : []
+	},
+	"tutorial_single_line" : {
+		"infoText" : "This is just a single line for things like names and numbers.",
+		"buttons" : []
+	},
+	"tutorial_text_box" : {
+		"infoText" : "This is a text area for paragraphs. Click the button below for information about how interacting with these text boxes is a little different.",
+		"buttons" : [
+			{"buttonText" : "Interacting with Text Boxes", "buttonData": "### Text boxes are for paragraphs, so formatting is kept when you make the document. This means that any tab indents or newlines will be kept and used when the document is made. The text as you see it in the text box is how it will look in the document."}
+		]
+	},
+	"tutorial_single_choice" : {
+		"infoText" : "This is a single choice question. Out of the options, you select one and your choice is taken into account later.",
+		"buttons" : []
+	},
 	"drNumber" : {
 		"infoText" : "This is the CAPD_DR/INC Number.",
 		"buttons" : []
