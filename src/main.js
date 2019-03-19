@@ -544,6 +544,8 @@ function loadHelpPane() {
 
 		} else if(sectionHelp[i].helpType == "helpInsert") {
 			// Create and append a button along with the text it inserts
+			var insertWrapper = document.createElement("div")
+
 			var insertButton = document.createElement("button");
 			insertButton.id = "insertButton";
 			insertButton.className = "insertButton";
@@ -551,7 +553,14 @@ function loadHelpPane() {
 			insertButton.customContent = sectionHelp[i].helpContent;
 			insertButton.targetQuestion = sectionHelp[i].targetQuestionID;
 			insertButton.addEventListener("click", insertButtonHandler);
-			$('#helpPane').append(insertButton);
+			insertWrapper.appendChild(insertButton);
+
+			var insertText = document.createElement('div');
+			insertText.className = "insertText";
+			insertText.innerHTML = sectionHelp[i].helpContent;
+			insertWrapper.appendChild(insertText);
+
+			$('#helpPane').append(insertWrapper);
 		}
 	}
 

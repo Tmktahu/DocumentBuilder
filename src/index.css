@@ -29,13 +29,6 @@ body {
     overflow-y: scroll;
 }
 
-#detailsText {
-	font-family: "Open Sans";
-    font-size: 18px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
 #progressContent {
 	font-family: "Open Sans";
     font-size: 18px;
@@ -148,4 +141,31 @@ body {
     width: 100%;
     background-color: #B1A296;
     margin-bottom: 15px;
+}
+
+#helpPane {
+    font-family: "Open Sans";
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.helpTitle {
+
+}
+
+.helpText {
+
+}
+
+.insertButton {
+    float: left;
+    background: white;
+    padding: 5px 5px 5px 6px;
+    margin: 5px 0px 0px 0px;
+}
+
+.insertText {
+    padding: 0px 0px 0px 60px;
+    font-size: 16px;
 }

@@ -36,6 +36,11 @@
 			"helpType": "helpInsert",
 			"targetQuestionID": "tutorial_text_box",
 			"helpContent": "This is an example insert. Inserts will always be put in with a newline before them."
+		},
+		{
+			"helpType": "helpInsert",
+			"targetQuestionID": "tutorial_text_box",
+			"helpContent": "Testing 2"
 		}
 	]
 },
