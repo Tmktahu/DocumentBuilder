@@ -3,9 +3,6 @@
 const { ipcRenderer } = require('electron');
 
 var core = {
-	tags : null,
-	questions : null,
-	inserts : null,
 	sections : null,
 	infoBarText : null,
 	answers : {},
@@ -22,43 +19,16 @@ var Docxtemplater = require('docxtemplater');
 var fs = require('fs');
 var path = require('path');
 
-$.getJSON("../config/tags.json", function(data) {
-	handleConfigs(data, null, null, null, null);
-})
-
-$.getJSON("../config/questions.json", function(data) {
-	handleConfigs(null, data, null, null, null);
-})
-
-$.getJSON("../config/inserts.json", function(data) {
-	handleConfigs(null, null, data, null, null);
-})
-
 $.getJSON("../config/sections.json", function(data) {
-	handleConfigs(null, null, null, data, null);
+	handleConfigs(data, null);
 })
 
 $.getJSON("../config/infoBarText.json", function(data) {
-	handleConfigs(null, null, null, null, data);
+	handleConfigs(null, data);
 })
 
 
-function handleConfigs(tags, questions, inserts, sections, infoBarText) {
-	if(tags != null) {
-		core.tags = tags;
-		console.log("Loaded tags from config file.");
-	}
-
-	if(questions != null) {
-		core.questions = questions;
-		console.log("Loaded questions from config file.");
-	}
-
-	if(inserts != null) {
-		core.inserts = inserts;
-		console.log("Loaded inserts from config file.");
-	}
-
+function handleConfigs(sections, infoBarText) {
 	if(sections != null) {
 		core.sections = sections;
 		console.log("Loaded sections from config file.");
@@ -69,7 +39,7 @@ function handleConfigs(tags, questions, inserts, sections, infoBarText) {
 		console.log("Loaded infoBarText from config file.");
 	}
 
-	if(core.tags != null && core.questions != null && core.inserts != null && core.sections != null && core.infoBarText != null) {
+	if(core.sections != null && core.infoBarText != null) {
 		console.log("finished loading and storing all configs");
 		setup();
 	}

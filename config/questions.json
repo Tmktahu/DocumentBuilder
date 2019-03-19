@@ -1,8 +1,0 @@
-{
-	"blah" : "This should be an object of key:question pairs for each question the user wants to ask",
-	"1" : {
-		"question" : "the question text",
-		"type" : "question type = binary, user input, multiple choice?",
-		"ifTrue" : ["keys", "of", "questions", "that", "must", "have", "been", "answered", "true"]
-	}
-}
