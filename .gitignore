@@ -7,3 +7,4 @@ output.docx
 search_warrant_template.docx
 test.docx
 dist/
+yarn.lock
