@@ -1,6 +1,6 @@
 {
   "name": "documentbuilder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A highly configurable, interactive document preparation program.",
   "author": "Travis Kehrli",
   "main": "src/index.js",
