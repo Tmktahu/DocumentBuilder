@@ -12,6 +12,31 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
   <body>
+    <div id="landingPanel" class="landingPanel">
+      <div id="landingGrid" class="grid-y" style="height:100%;">
+        <div class="cell medium-6">
+          <div class="landingIcon">
+            <img src="../img/CCD_Coin_Clean.png" alt="LA Distict Attorney's Office : Cyber Crime Division">
+          </div>
+        </div>
+        <div class="cell medium-1">
+          <div class="landingVersionAndCredits">
+            Search Warrant Builder v1.0.1, coded by Travis Kehrli
+          </div>
+        </div>
+        <div class="cell medium-2" style="text-align: center;">
+          <div class="landingConfig">
+            If you want to use your own configuration file (<a href="https://github.com/Tmktahu/DocumentBuilder">documentation</a>), select it here:
+          </div>
+          <button class="selectConfigButton" onclick="selectConfigHandler()">Select File</button>
+          <div id="landingSelectedConfigPath" class="landingSelectedConfigPath"></div>
+        </div>
+        <div class="cell medium-auto" style="text-align: center;">
+          <button class="landingStartProgramButton" onclick="startProgramHandler()">Launch</button>
+        </div>
+      </div>
+    </div>
+
     <div id="topGrid" class="grid-x">
       <div class="cell medium-2 progressPane">
         <div id="progressContent"></div>
@@ -30,8 +55,6 @@
         <div id="helpPane"></div>
       </div>
     </div>
-
-
 
     <script src="../lib/foundation/js/vendor/jquery.js"></script>
     <script src="../lib/foundation/js/vendor/what-input.js"></script>

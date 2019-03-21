@@ -19,9 +19,41 @@ var Docxtemplater = require('docxtemplater');
 var fs = require('fs');
 var path = require('path');
 
-$.getJSON("../config/sections.json", function(data) {
-	handleConfigs(data);
-})
+
+// on the landing panel, have a button where they can browse for a file
+function startProgramHandler() {
+	$('#landingPanel').fadeOut();
+
+	if(configPath == "") {
+		configPath = "../config/sections.json";
+	}
+
+	$.getJSON(configPath, function(data) {
+		handleConfigs(data);
+	})
+}
+
+var configPath = "";
+function selectConfigHandler() {
+	var dialogPaths = dialog.showOpenDialog({
+		title: "Select Configuration File (sections.json)",
+		buttonLabel: "Use File",
+		properties: ["openFile"],
+		message: "Select the sections.json to use. See documentation for more details.",
+		filters: [
+		    {name: 'Json', extensions: ['json']},
+		    {name: 'All Files', extensions: ['*']}
+		]
+	});
+
+	if(dialogPaths != undefined && dialogPaths.length == 1) {
+		configPath = dialogPaths[0];
+	} else {
+		configPath = "../config/sections.json";
+	}
+
+	$('#landingSelectedConfigPath').html(configPath);
+}
 
 function handleConfigs(sections) {
 	if(sections != null) {
@@ -607,3 +639,11 @@ $(window).on('resize', function() {
 	$('#topGrid').height(window.innerHeight);
 	setBodyScale();
 })
+
+const shell = require('electron').shell;
+
+// assuming $ is jQuery
+$(document).on('click', 'a[href^="http"]', function(event) {
+    event.preventDefault();
+    shell.openExternal(this.href);
+});
