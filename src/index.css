@@ -16,14 +16,14 @@ body {
 
 #questionText {
 	font-family: "Open Sans";
-    font-size: 18px;
+    font-size: 1.3em;
     border-bottom: solid black;
     padding-left: 10px;
 }
 
 #questionAnswer {
 	font-family: "Open Sans";
-    font-size: 18px;
+    font-size: 1.2em;
     padding-left: 10px;
     padding-top: 10px;
     overflow-y: scroll;
@@ -70,12 +70,13 @@ body {
 }
 
 .submitButton {
-    height: 40px;
-    width: 100px;
+    height: 50px;
+    width: 200px;
     background-color: #B1A296;
     float: right;
     margin-right: 15px;
     margin-bottom: 15px;
+    font-size: 22px;
 }
 
 .submitButton:hover {
@@ -88,14 +89,15 @@ body {
     width: 150px;
     margin-left: 15px;
     margin-bottom: 15px;
+    font-size: 22px;
 }
 
 .questionNoButton {
-    float: left;
     background-color: #ff6d6d;
     height: 40px;
     width: 150px;
     margin-bottom: 15px;
+    font-size: 22px;
 }
 
 .questionButtonSelected {
@@ -124,7 +126,7 @@ body {
     background-color: #557A95;
     width: 90%;
     margin-top: 5px;
-    font-size: 16px;
+    font-size: 1em;
     padding: 5px 5px 5px 5px;;
 }
 
@@ -151,21 +153,33 @@ body {
 }
 
 .helpTitle {
-
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: solid 2px black;
+    margin: 5px 0 0 0;
 }
 
 .helpText {
-
+    text-indent: 20px;
+    margin: 5px 0px 5px 0px;
 }
 
 .insertButton {
     float: left;
-    background: white;
+    background: #B1A296;
     padding: 5px 5px 5px 6px;
-    margin: 5px 0px 0px 0px;
+}
+
+.insertButton:hover {
+    background-color: #efe0d4;
 }
 
 .insertText {
     padding: 0px 0px 0px 60px;
-    font-size: 16px;
+    font-size: 0.9em;
+    text-indent: 10px;
+}
+
+.insertWrapper {
+    margin: 15px 0px 15px 5px;
 }

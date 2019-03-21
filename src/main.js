@@ -1,10 +1,10 @@
 // This is the main js file that will control all the logic
 
 const { ipcRenderer } = require('electron');
+const { dialog } = require('electron').remote
 
 var core = {
 	sections : null,
-	infoBarText : null,
 	answers : {},
 	answerInserts : {},
 	finalInserts : {},
@@ -20,25 +20,16 @@ var fs = require('fs');
 var path = require('path');
 
 $.getJSON("../config/sections.json", function(data) {
-	handleConfigs(data, null);
+	handleConfigs(data);
 })
 
-$.getJSON("../config/infoBarText.json", function(data) {
-	handleConfigs(null, data);
-})
-
-function handleConfigs(sections, infoBarText) {
+function handleConfigs(sections) {
 	if(sections != null) {
 		core.sections = sections;
 		console.log("Loaded sections from config file.");
 	}
 
-	if(infoBarText != null) {
-		core.infoBarText = infoBarText;
-		console.log("Loaded infoBarText from config file.");
-	}
-
-	if(core.sections != null && core.infoBarText != null) {
+	if(core.sections != null) {
 		console.log("finished loading and storing all configs");
 		setup();
 	}
@@ -78,6 +69,8 @@ function searchWarrantScript() {
 
 	// Load the current section
 	loadSection(core.currentSectionIndex, answerDiv);
+
+	setBodyScale();
 }
 
 // This function creates and appends a single input line with a label
@@ -257,6 +250,7 @@ function yesNoButtonHandler() {
 }
 
 function infoButtonHandler() {
+	/*
 	var questionID = $(window.event.target).parent()[0].name;
 
 	// send the infoBarText data to the main process for a new window
@@ -279,11 +273,14 @@ function infoButtonHandler() {
 			infoPanel.appendChild(button);
 		}
 	}
+	*/
 }
 
 function moreInfoButtonHandler() {
+	/*
 	var data = $(window.event.target)[0].name;
 	ipcRenderer.send('infoWindow', data);
+	*/
 }
 
 function progressButtonHandler() {
@@ -467,9 +464,6 @@ function makeDocument() {
 		}
 	}
 
-
-
-
 	// Read the docx file as a binary
 	
 	var content = fs.readFileSync(path.resolve(__dirname, '../search_warrant_template.docx'), 'binary');
@@ -507,10 +501,21 @@ function makeDocument() {
 	    throw error;
 	}
 
-	var buf = doc.getZip().generate({type: 'nodebuffer'});
 
-	// buf is a nodejs buffer, you can either write it to a file or do anything else with it.
-	fs.writeFileSync(path.join(require('os').homedir(), 'Desktop/output.docx'), buf);
+	var savePath = dialog.showSaveDialog({
+		title: "Save Document",
+		defaultPath: path.join(require('os').homedir(), 'Desktop/output.docx'),
+		buttonLabel: "Save Document"
+	});
+
+	if(savePath != undefined) {
+		var buf = doc.getZip().generate({type: 'nodebuffer'});
+
+		// buf is a nodejs buffer, you can either write it to a file or do anything else with it.
+		fs.writeFileSync(savePath, buf);
+	}
+
+	
 	
 
 
@@ -544,7 +549,8 @@ function loadHelpPane() {
 
 		} else if(sectionHelp[i].helpType == "helpInsert") {
 			// Create and append a button along with the text it inserts
-			var insertWrapper = document.createElement("div")
+			var insertWrapper = document.createElement("div");
+			insertWrapper.className = "insertWrapper";
 
 			var insertButton = document.createElement("button");
 			insertButton.id = "insertButton";
@@ -595,7 +601,25 @@ $(document).delegate('.textBoxFieldInput', 'keydown', function(e) {
   }
 });
 
+var $body = $('body'); //Cache this for performance
+var $zoomElements = $('#helpPane, #questionText, #questionAnswer, #progressContent')
+
+var setBodyScale = function() {
+    var scaleSource = $body.width(),
+        scaleFactor = 0.1,                     
+        maxScale = 200,
+        minScale = 120; //Tweak these values to taste
+
+    var fontSize = scaleSource * scaleFactor; //Multiply the width of the body by the scaling factor:
+
+    if (fontSize > maxScale) fontSize = maxScale;
+    if (fontSize < minScale) fontSize = minScale; //Enforce the minimum and maximums
+
+    //$('#helpPane').css('font-size', fontSize + '%');
+    $zoomElements.css('font-size', fontSize + '%');
+}
+
 $(window).on('resize', function() {
-	console.log('ok')
 	$('#topGrid').height(window.innerHeight);
+	setBodyScale();
 })
