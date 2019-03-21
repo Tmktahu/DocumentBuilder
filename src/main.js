@@ -416,10 +416,7 @@ function loadSection(sectionIndex) {
 }
 
 function makeDocument() {
-	console.log("Now the program makes the document");
-
 	for(var key in core.answers) {
-		console.log(key)
 		switch(key) {
 			case 'delay_notice_yesNo':
 				if(core.answers.sealed_warrant_yesNo && core.answers.delay_notice_yesNo) {
@@ -463,30 +460,29 @@ function makeDocument() {
 				core.finalInserts[key] = core.answers[key];
 		}
 	}
-
-	// Read the docx file as a binary
 	
 	var content = fs.readFileSync(path.resolve(__dirname, '../search_warrant_template.docx'), 'binary');
 	var zip = new JSZip(content);
 	var doc = new Docxtemplater();
-	doc.setOptions({linebreaks: true})
+	doc.setOptions({
+		linebreaks: true,
+		nullGetter: function(part, scopeManager) {
+		    if (!part.module) {
+		        return "PLEASE_COMPLETE";
+		    }
+		    if (part.module === "rawxml") {
+		        return "";
+		    }
+		    return "";
+		}
+	})
+
 	doc.loadZip(zip);
-
-
-	// So we need to assemble the final object with tags and everything.
-	//	Most of this will be easy copy-paste from what they entered, but some of it requires inserts
-	//	This is where the inserts config file comes in. Users can put the config file inserts they want in there and this will use them if they exist
-	//	We could make the inserts arrays of inserts and user input could be placed between two inserts
-
-
-
-	//set the templateVariables
 	doc.setData(
 	    core.finalInserts
 	);
 
 	try {
-	    // render the document (replace all occurences of {first_name} by John, {last_name} by Doe, ...)
 	    doc.render()
 	}
 	catch (error) {
@@ -501,7 +497,6 @@ function makeDocument() {
 	    throw error;
 	}
 
-
 	var savePath = dialog.showSaveDialog({
 		title: "Save Document",
 		defaultPath: path.join(require('os').homedir(), 'Desktop/output.docx'),
@@ -510,19 +505,8 @@ function makeDocument() {
 
 	if(savePath != undefined) {
 		var buf = doc.getZip().generate({type: 'nodebuffer'});
-
-		// buf is a nodejs buffer, you can either write it to a file or do anything else with it.
 		fs.writeFileSync(savePath, buf);
 	}
-
-	
-	
-
-
-	// NOTES:
-	//	If it finds a {tag} that it does not have a definition for, it replaces it with "undefined".
-	//	\n and \r newline characters don't seem to work.
-
 }
 
 function loadHelpPane() {
