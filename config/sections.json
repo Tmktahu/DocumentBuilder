@@ -16,7 +16,7 @@
 			"inputType": "textBoxInput",
 			"questionID": "tutorial_text_box",
 			"inputLabel": "Text Box Input :",
-			"defaultText": "^ You can click the little 'i' info buttons to get help text on the right side of the screen.\n\nSometimes there will be buttons you can press there that will give you more information in a popup."
+			"defaultText": "Some text boxes will have default values in them already, like this message.\n\nIn addition, sometimes under the help section for a text box there will be buttons you can press there that will insert snippets of text."
 		},
 		{
 			"inputType": "singleChoiceOption",
@@ -468,13 +468,13 @@
 			"inputType": "textBoxInput",
 			"questionID": "facebook_data_types",
 			"inputLabel": "For the following types of data :",
-			"defaultText": "^ Press the info button to see the list of data types you can place here."
+			"defaultText": "Check the info panel on the right to see the list of data types you can place here."
 		},
 		{
 			"inputType": "textBoxInput",
 			"questionID": "facebook_additional_data_types",
 			"inputLabel": "For the following types of data :",
-			"defaultText": "^ Press the info button to see the list of data types you can place here."
+			"defaultText": "Check the info panel on the right to see the list of data types you can place here."
 		}
 	],
 	"sectionConditions": [],
