@@ -26,10 +26,17 @@
         </div>
         <div class="cell medium-2" style="text-align: center;">
           <div class="landingConfig">
-            If you want to use your own configuration file (<a href="https://github.com/Tmktahu/DocumentBuilder">documentation</a>), select it here:
+            If you want to use your own configuration and template files (<a href="https://github.com/Tmktahu/DocumentBuilder">documentation</a>), select it here:
           </div>
-          <button class="selectConfigButton" onclick="selectConfigHandler()">Select File</button>
-          <div id="landingSelectedConfigPath" class="landingSelectedConfigPath"></div>
+          <div class="selectFileWrapper">
+            <button class="selectConfigButton" onclick="selectConfigHandler()">Select Config File</button>
+            <div id="landingSelectedConfigPath" class="landingSelectedConfigPath"></div>
+          </div>
+          <br>
+          <div class="selectFileWrapper">
+            <button class="selectConfigButton" onclick="selectTemplateHandler()">Select Template File</button>
+            <div id="landingSelectedTemplatePath" class="landingSelectedConfigPath"></div>
+          </div>
         </div>
         <div class="cell medium-auto" style="text-align: center;">
           <button class="landingStartProgramButton" onclick="startProgramHandler()">Launch</button>

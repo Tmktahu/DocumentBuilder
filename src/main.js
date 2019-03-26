@@ -34,6 +34,7 @@ function startProgramHandler() {
 }
 
 var configPath = "";
+var templatePath = "";
 function selectConfigHandler() {
 	var dialogPaths = dialog.showOpenDialog({
 		title: "Select Configuration File (sections.json)",
@@ -53,6 +54,27 @@ function selectConfigHandler() {
 	}
 
 	$('#landingSelectedConfigPath').html(configPath);
+}
+
+function selectTemplateHandler() {
+	var dialogPaths = dialog.showOpenDialog({
+		title: "Select Template File (docx)",
+		buttonLabel: "Use File",
+		properties: ["openFile"],
+		message: "Select the template.docx file to use. See documentation for more details.",
+		filters: [
+		    {name: 'Docx', extensions: ['docx']},
+		    {name: 'All Files', extensions: ['*']}
+		]
+	});
+
+	if(dialogPaths != undefined && dialogPaths.length == 1) {
+		templatePath = dialogPaths[0];
+	} else {
+		templatePath = path.resolve(__dirname, '../search_warrant_template.docx');
+	}
+
+	$('#landingSelectedTemplatePath').html(templatePath);
 }
 
 function handleConfigs(sections) {
@@ -492,8 +514,12 @@ function makeDocument() {
 				core.finalInserts[key] = core.answers[key];
 		}
 	}
+
+	if(templatePath == undefined || templatePath == "") {
+		templatePath = path.resolve(__dirname, '../search_warrant_template.docx');
+	}
 	
-	var content = fs.readFileSync(path.resolve(__dirname, '../search_warrant_template.docx'), 'binary');
+	var content = fs.readFileSync(templatePath, 'binary');
 	var zip = new JSZip(content);
 	var doc = new Docxtemplater();
 	doc.setOptions({
