@@ -4,6 +4,8 @@ This is a highly configurable, interactive document preparation program. The ent
 ## Using this program
 You can clone this repo and use `npm install` or `yarn install` to get things rolling. This is the ideal environment for configuration as you can test things as you go. Then, once you have finished configuration, I reccommend using [electron-builder](https://github.com/electron-userland/electron-builder) to compile the program into whatever format you need.
 
+If you would rather just use the program as it is or are looking for a binary, you can download portable, compiled versions of the program in the [releases section](https://github.com/Tmktahu/DocumentBuilder/releases).
+
 ## Configuration
 The 'sections.json' file is the driving force of the whole program. All sections, text, questions, and help information are placed in there and then the program builds itself as defined.
 
@@ -17,7 +19,7 @@ The 'sections.json' file contains a single array of section objects:
 ```
 
 Each 'section' object is defined as follows:
-```
+```javascript
 {
   "sectionTitle": "This is the title for the section and will show up in the progress pane",
   "sectionText": "This is the text that is shown at the top of the program",
@@ -31,7 +33,7 @@ Each 'section' object is defined as follows:
     },
     ...
   ],
-  "sectionConditions": ["This is an array of questionID strings. They should be booleans. Normally they are IDs for 'yesNoQuestion" questions."],
+  "sectionConditions": ["This is an array of questionID strings. They should be booleans. Normally they are IDs for 'yesNoQuestion' questions."],
   "sectionConditionsFalse": "This is the text that should be shown if the section conditions are false.",
   "sectionHelp": [
     {
@@ -44,6 +46,17 @@ Each 'section' object is defined as follows:
   ]
 }
 ```
+
+## Template Preparation
+Any `.docx` file may be used as a template. This program uses [docxtemplater](https://www.npmjs.com/package/docxtemplater) to insert data into the template. You can see their documentation [here](https://docxtemplater.readthedocs.io/en/latest/tag_types.html) about the different kinds of tags you can insert.
+
+**Any tag you place inside the document must match the 'questionID' of the question that should use that tag.**  
+i.e. the `{first_name}` tag will be used by the question that has the questionID of `first_name`.
+
+#### NOTE!!
+Be aware, currently the program has a section that is specifically programmed for search warrants. The function `makeDocument()` *(in main.js)* contains a switch statement that handles certain tags in a defined way. In the future, I may attempt to shift this functionality to the configuration file, but for now it is hardcoded.
+
+The program will still work with other documents. Yes/No questions can give you boolean values for conditional tags. Text inputs can still be inserted into regular tags as expected. But if you need specialized behavior for a document, then consider altering the switch statement inside the `makeDocument()` *(in main.js)* function.
 
 ## Tips
 * If the program won't load, then you may be lacking or have an extra comma somewhere in the section.json. Someday I may add a configuration checker to make this easier to deal with, but for now you'll need to proofread your section.json file yourself.
