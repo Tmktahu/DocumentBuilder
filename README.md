@@ -4,7 +4,7 @@ This is a highly configurable, interactive document preparation program. The ent
 ## Using this program
 You can clone this repo and use `npm install` or `yarn install` to get things rolling. This is the ideal environment for configuration as you can test things as you go. Then, once you have finished configuration, I reccommend using [electron-builder](https://github.com/electron-userland/electron-builder) to compile the program into whatever format you need.
 
-If you would rather just use the program as it is or are looking for a binary, you can download portable, compiled versions of the program in the [releases section](https://github.com/Tmktahu/DocumentBuilder/releases).
+If you would rather just use the program as it is or are looking for a binary, you can download portable, compiled versions of the program in the [releases section](https://github.com/Tmktahu/DocumentBuilder/releases) (none as of yet).
 
 ## Configuration
 The 'sections.json' file is the driving force of the whole program. All sections, text, questions, and help information are placed in there and then the program builds itself as defined.
