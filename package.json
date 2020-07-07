@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Tmktahu/DocumentBuilder#readme",
   "devDependencies": {
-    "electron": "^4.0.4",
+    "electron": "^9.1.0",
     "electron-builder": "^20.39.0"
   },
   "dependencies": {
